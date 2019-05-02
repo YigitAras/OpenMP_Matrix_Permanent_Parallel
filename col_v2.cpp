@@ -23,7 +23,7 @@ int GraphColorChecker(int *row,int *col,int *colour,int N){
  // if(err_count>0) printf("Error, ");
  // else printf("Succs, ");
   int max = 0;
-
+  if(err_count > 0) printf(" ERRORS ");
   for(int i=0;i<N;i++){
     if(colour[i]>max){
       max = colour[i];
@@ -171,8 +171,8 @@ while(err != 0){
   #pragma omp parallel proc_bind(spread)
   {
       // ============ colour assignment area below ====================
-      int *forbid = new int[N]();
-
+      //int *forbid = new int[N]();
+	int *forbid = (int*) malloc(N*sizeof(int));
       #pragma omp for schedule(guided)
       for(int i=0;i<=err;i++){
         int ind = errors[i];
@@ -180,7 +180,8 @@ while(err != 0){
         int end = row[ind + 1];
         for(int j=start ; j< end;j++){
           // Set the forbiddensssssss
-          forbid[colour[col[j]]] = ind;
+        int index = colour[col[j]]; 
+	 forbid[index] = ind;
         }
 
         for(int k=0;k<N;k++){
@@ -190,7 +191,6 @@ while(err != 0){
           }
         }
       }
-     delete[] forbid;
   }
   err = 0;
   if(t>1){
@@ -202,12 +202,13 @@ while(err != 0){
       int end = row[i + 1];
       for(int j=start ; j< end;j++){
         // Set the forbiddensssssss
-        if( (colour[col[j]] == colour[i]) && (i < col[j]) ){
+        if( (i < col[j]) && (colour[col[j]] == colour[i]) ){
           #pragma omp critical
           {
             errors[err] = i;
             err++;
           }
+	  break;
         }
       }
     }
