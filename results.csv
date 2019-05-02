@@ -2,7 +2,7 @@ Graph,NumThreads,Time,NumColors,
 coPapersDBLP.mtx,1,0.0444456,337
 coPapersDBLP.mtx,2,0.136253,337
 coPapersDBLP.mtx,4,0.100721,336
- ERRORS coPapersDBLP.mtx,8,0.0564761,336
+coPapersDBLP.mtx,8,0.0564761,336
 coPapersDBLP.mtx,16,0.0445613,337
 coPapersDBLP.mtx,1,0.0445875,337
 coPapersDBLP.mtx,2,0.0737162,337
@@ -12,13 +12,13 @@ coPapersDBLP.mtx,16,0.0949286,337
 coPapersDBLP.mtx,1,0.0445861,337
 coPapersDBLP.mtx,2,0.171977,337
 coPapersDBLP.mtx,4,0.0946186,336
- ERRORS coPapersDBLP.mtx,8,0.0578998,336
+coPapersDBLP.mtx,8,0.0578998,336
 coPapersDBLP.mtx,16,0.0664308,337
 coPapersDBLP.mtx,1,0.0446538,337
 coPapersDBLP.mtx,2,0.108835,337
 coPapersDBLP.mtx,4,0.112645,336
 coPapersDBLP.mtx,8,0.0539264,336
- ERRORS coPapersDBLP.mtx,16,0.0602515,337
+coPapersDBLP.mtx,16,0.0602515,337
 rmat-b.mtx,1,1.84091,85
 rmat-b.mtx,2,2.63028,85
 rmat-b.mtx,4,2.31778,89
